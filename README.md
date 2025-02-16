@@ -1,3 +1,3 @@
 # ps_sample
 
-Powershell Script Samples.
+PowerShell Script Samples.
