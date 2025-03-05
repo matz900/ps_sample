@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="SampleProduct" Language="1033" Version="1.0.0.0" Manufacturer="YourCompany" UpgradeCode="PUT-GUID-HERE">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+    <Media Id="1" Cabinet="Sample.cab" EmbedCab="yes" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="SampleProduct" />
+      </Directory>
+    </Directory>
+
+    <Feature Id="ProductFeature" Title="SampleProduct" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+  </Product>
+
+  <Fragment>
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="MainExecutable" Guid="PUT-GUID-HERE">
+        <File Source="path\to\your\executable.exe" />
+      </Component>
+    </DirectoryRef>
+
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <ComponentRef Id="MainExecutable" />
+    </ComponentGroup>
+  </Fragment>
+</Wix>
+
+<!-- filepath: /c:/work/vmshare/workspace/wix-msi-installer/Product.wxs  -->
+<!--
+Product: インストールする製品の情報を定義します。Id、Name、Language、Version、Manufacturer、UpgradeCode などの属性があります。
+Package: インストーラーのパッケージ情報を定義します。
+MajorUpgrade: メジャーアップグレードの設定を定義します。
+Media: インストールメディアの情報を定義します。
+Directory: インストール先のディレクトリ構造を定義します。
+Feature: インストールする機能を定義します。
+Fragment: インストールするファイルやコンポーネントを定義します。
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="SampleProduct" Language="1033" Version="1.0.0.0" Manufacturer="YourCompany" UpgradeCode="PUT-GUID-HERE">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    <Media Id="1" Cabinet="Sample.cab" EmbedCab="yes" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="SampleProduct" />
+      </Directory>
+    </Directory>
+    <Feature Id="ProductFeature" Title="SampleProduct" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+  </Product>
+  <Fragment>
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="MainExecutable" Guid="PUT-GUID-HERE">
+        <File Source="path\to\your\executable.exe" />
+      </Component>
+    </DirectoryRef>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <ComponentRef Id="MainExecutable" />
+    </ComponentGroup>
+  </Fragment>
+</Wix>
+-->
