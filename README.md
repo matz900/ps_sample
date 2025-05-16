@@ -1,3 +1,4 @@
+
 # ps_sample
 
 PowerShell Script Samples.
@@ -12,3 +13,6 @@ PowerShell Script Samples.
 
 # memo2
 winget download XPDCHZH119SRT8
+
+# memo3
+https://qiita.com/yoshi_yast/items/b0170158ed477cbe2476
