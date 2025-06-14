@@ -16,3 +16,4 @@ winget download XPDCHZH119SRT8
 
 # memo3
 https://qiita.com/yoshi_yast/items/b0170158ed477cbe2476
+https://learn.microsoft.com/ja-jp/windows/package-manager/winget/uninstall
